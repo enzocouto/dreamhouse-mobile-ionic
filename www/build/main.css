@@ -5762,7 +5762,7 @@ button[disabled],
 
 .button-clear-md {
   border-color: transparent;
-  color: #84BF41;
+  color: black;
   background-color: transparent;
   box-shadow: none;
   opacity: 1;
@@ -14616,7 +14616,7 @@ ion-modal {
 }
 
 .note-md {
-  color: #c5c5c5;
+  color: black;
 }
 
 .note-md-primary {
@@ -24390,7 +24390,7 @@ ion-navbar.toolbar {
 }
 
 ion-note {
-  color: #84BF41 !important;
+  color: black;
   font-size: 1.4rem !important;
 }
 

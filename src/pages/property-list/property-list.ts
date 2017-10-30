@@ -47,7 +47,7 @@ export class PropertyListPage {
 
     showMap() {
         setTimeout(() => {
-            this.map = leaflet.map("map").setView([-23.5786635, -46.7921882], 14);
+            this.map = leaflet.map("map").setView([-23.55017918, -46.63342237], 12);
             leaflet.tileLayer('http://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}.png', {
                 attribution: 'Tiles &copy; Esri'
             }).addTo(this.map);
