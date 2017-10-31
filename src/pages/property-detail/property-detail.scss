@@ -2,3 +2,10 @@ ion-note {
   color: color($colors, primary) !important;
   font-size: 1.4rem !important;
 }
+
+
+ion-item ion-note,ion-item button {
+  color: color($colors, dark) !important;
+}
+
+

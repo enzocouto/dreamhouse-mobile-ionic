@@ -40,20 +40,20 @@ export class PropertyDetailPage {
             buttons: [
                 {
                     text: 'Twitter',
-                    handler: () => console.log('share via twitter')
+                    handler: () => console.log('Compartilhar via twitter')
                 },
                 {
                     text: 'Facebook',
-                    handler: () => console.log('share via facebook')
+                    handler: () => console.log('Compartilhar via facebook')
                 },
                 {
                     text: 'Email',
-                    handler: () => console.log('share via email')
+                    handler: () => console.log('Compartilhar via email')
                 },
                 {
                     text: 'Cancel',
                     role: 'cancel',
-                    handler: () => console.log('cancel share')
+                    handler: () => console.log('Cancela compartilhamento')
                 }
             ]
         });
