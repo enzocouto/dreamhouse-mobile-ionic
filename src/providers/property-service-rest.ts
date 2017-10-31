@@ -3,6 +3,7 @@ import {Http, Headers, RequestOptions} from '@angular/http';
 import {SERVER_URL} from './config';
 
 let propertiesURL = SERVER_URL + 'properties/',
+    imagesByIdProperty = SERVER_URL + 'properties/images/',
     favoritesURL = propertiesURL + 'favorites/';
 
 @Injectable()
@@ -26,6 +27,12 @@ export class PropertyService {
 
     findById(id) {
         return this.http.get(propertiesURL + id)
+            .map(res => res.json())
+            .toPromise();
+    }
+
+    findImagesByIdProperty(id){
+        return this.http.get(imagesByIdProperty + id)
             .map(res => res.json())
             .toPromise();
     }
