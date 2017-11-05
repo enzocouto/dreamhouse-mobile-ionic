@@ -10,12 +10,18 @@ import {PropertyService} from '../../providers/property-service-rest';
 export class PropertyDetailPage {
 
     property: any;
-
+    slides: Array<any>;
     constructor(public actionSheetCtrl: ActionSheetController, public navCtrl: NavController, public navParams: NavParams, public propertyService: PropertyService, public toastCtrl: ToastController) {
         this.property = this.navParams.data;
         propertyService.findById(this.property.id).then(
             property => this.property = property
         );
+
+         propertyService.findImagesByIdProperty(this.property.id).then(
+            slides => this.slides = slides
+        );
+
+
     }
 
     openBrokerDetail(broker) {
@@ -26,7 +32,7 @@ export class PropertyDetailPage {
         this.propertyService.favorite(property)
             .then(property => {
                 let toast = this.toastCtrl.create({
-                    message: 'Property added to your favorites',
+                    message: 'O imóvel foi adicionado aos seus Favoritos',
                     cssClass: 'mytoast',
                     duration: 1000
                 });
