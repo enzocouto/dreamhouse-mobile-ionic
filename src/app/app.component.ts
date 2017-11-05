@@ -2,13 +2,12 @@ import {Component, ViewChild} from '@angular/core';
 import {Nav, Platform} from 'ionic-angular';
 import {StatusBar} from '@ionic-native/status-bar';
 import {SplashScreen} from '@ionic-native/splash-screen';
-
 import {PropertyListPage} from '../pages/property-list/property-list';
 import {BrokerListPage} from '../pages/broker-list/broker-list';
 import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
 import {WelcomePage} from '../pages/welcome/welcome';
 import {AboutPage} from '../pages/about/about';
-
+import {LoginPage} from '../pages/login/login';
 export interface MenuItem {
     title: string;
     component: any;
@@ -40,7 +39,7 @@ export class MyApp {
         ];
 
         this.accountMenuItems = [
-            {title: 'Minha Conta', component: WelcomePage, icon: 'ios-contact'},
+            {title: 'Minha Conta', component: LoginPage, icon: 'ios-contact'},
             {title: 'Sair', component: WelcomePage, icon: 'log-out'},
         ];
 
