@@ -9,7 +9,7 @@
     <ion-slides pager>
         <ion-slide *ngFor="let slide of slides">
            
-            <img [src]="slide.images" class="slide-images" />
+            <img [src]="slide.srcImagem" class="slide-images" />
         </ion-slide>
   
     </ion-slides>
@@ -37,12 +37,12 @@
                 <h3>Preço</h3>
                 <ion-note item-right>{{property.price}}</ion-note>
             </ion-item>
-            <button ion-item (click)="openBrokerDetail(property.broker)">
+            <button ion-item (click)="openBrokerDetail(property.corretor)">
                 <ion-avatar item-left>
-                    <img src="{{property.broker.picture}}"/>
+                    <img src="{{property.corretor.picture}}"/>
                 </ion-avatar>
-                <h2>{{property.broker.name}}</h2>
-                <p>{{property.broker.title}}</p>
+                <h2>{{property.corretor.name}}</h2>
+                <p>{{property.corretor.title}}</p>
             </button>
         </ion-list>
 

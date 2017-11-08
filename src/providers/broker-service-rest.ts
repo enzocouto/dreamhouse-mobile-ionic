@@ -3,7 +3,7 @@ import {Injectable} from '@angular/core';
 import {SERVER_URL} from './config';
 import {Http} from '@angular/http';
 
-let brokersURL = SERVER_URL + 'brokers/';
+let brokersURL = SERVER_URL + 'corretor/';
 
 @Injectable()
 export class BrokerService {

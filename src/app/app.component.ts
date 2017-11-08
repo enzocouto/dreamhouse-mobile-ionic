@@ -8,6 +8,8 @@ import {FavoriteListPage} from '../pages/favorite-list/favorite-list';
 import {WelcomePage} from '../pages/welcome/welcome';
 import {AboutPage} from '../pages/about/about';
 import {LoginPage} from '../pages/login/login';
+import { CookieService } from 'angular2-cookie/core';
+import { RequestOptions } from '@angular/http';
 export interface MenuItem {
     title: string;
     component: any;
@@ -20,7 +22,7 @@ export interface MenuItem {
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
-    rootPage: any = WelcomePage;
+    rootPage: any = LoginPage;
 
     appMenuItems: Array<MenuItem>;
 
@@ -28,7 +30,7 @@ export class MyApp {
 
     helpMenuItems: Array<MenuItem>;
 
-    constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen) {
+    constructor(public platform: Platform, public statusBar: StatusBar, public splashScreen: SplashScreen,public cookieService: CookieService,public requestOptions:RequestOptions) {
         this.initializeApp();
 
         this.appMenuItems = [
@@ -40,7 +42,7 @@ export class MyApp {
 
         this.accountMenuItems = [
             {title: 'Minha Conta', component: LoginPage, icon: 'ios-contact'},
-            {title: 'Sair', component: WelcomePage, icon: 'log-out'},
+           
         ];
 
         this.helpMenuItems = [
@@ -63,5 +65,12 @@ export class MyApp {
         // Reset the content nav to have just this page
         // we wouldn't want the back button to show in this scenario
         this.nav.setRoot(page.component);
+    }
+
+    logout(){
+        this.cookieService.removeAll();
+        this.requestOptions.headers.set('Authorization',"Bearer ");
+        this.nav.setRoot(LoginPage);
+        
     }
 }

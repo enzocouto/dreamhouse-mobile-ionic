@@ -2,9 +2,9 @@ import {Injectable} from '@angular/core';
 import {Http, Headers, RequestOptions} from '@angular/http';
 import {SERVER_URL} from './config';
 
-let propertiesURL = SERVER_URL + 'properties/',
-    imagesByIdProperty = SERVER_URL + 'properties/images/',
-    favoritesURL = propertiesURL + 'favorites/';
+let propertiesURL = SERVER_URL + 'imovel/',
+    imagesByIdProperty = SERVER_URL + 'imovel/imagem/',
+    favoritesURL = propertiesURL + '/favorites/';
 
 @Injectable()
 export class PropertyService {
@@ -20,7 +20,7 @@ export class PropertyService {
     }
 
     findByName(key:string) {
-        return this.http.get(propertiesURL + "?key=" + key)
+        return this.http.get(propertiesURL + key + "/title")
             .map(res => res.json())
             .toPromise();
     }
@@ -43,10 +43,11 @@ export class PropertyService {
             .toPromise();
     }
 
-    favorite(property) {
+    favorite(property,acess_token) {
         let body = JSON.stringify(property),
             headers = new Headers({'Content-Type': 'application/json'}),
             options = new RequestOptions({headers: headers});
+            options.headers.set('Authorization', "Bearer " + acess_token);
         return this.http.post(favoritesURL, body, options).toPromise();
     }
 

@@ -61,8 +61,8 @@ export class PropertyListPage {
         }
         this.markersGroup = leaflet.layerGroup([]);
         this.properties.forEach(property => {
-            if (property.lat, property.long) {
-                let marker: any = leaflet.marker([property.lat, property.long]).on('click', event => this.openPropertyDetail(event.target.data));
+            if (property.latitude, property.longitude) {
+                let marker: any = leaflet.marker([property.latitude, property.longitude]).on('click', event => this.openPropertyDetail(event.target.data));
                 marker.data = property;
                 this.markersGroup.addLayer(marker);
             }
