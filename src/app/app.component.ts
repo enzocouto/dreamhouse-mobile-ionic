@@ -10,6 +10,7 @@ import {AboutPage} from '../pages/about/about';
 import {LoginPage} from '../pages/login/login';
 import { CookieService } from 'angular2-cookie/core';
 import { RequestOptions } from '@angular/http';
+import {DeepLinkConfig, DeepLinkMetadata} from 'ionic-angular/navigation/nav-util';
 export interface MenuItem {
     title: string;
     component: any;
@@ -22,7 +23,7 @@ export interface MenuItem {
 export class MyApp {
     @ViewChild(Nav) nav: Nav;
 
-    rootPage: any = LoginPage;
+    rootPage: any = WelcomePage;
 
     appMenuItems: Array<MenuItem>;
 

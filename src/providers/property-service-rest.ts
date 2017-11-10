@@ -4,7 +4,7 @@ import {SERVER_URL} from './config';
 
 let propertiesURL = SERVER_URL + 'imovel/',
     imagesByIdProperty = SERVER_URL + 'imovel/imagem/',
-    favoritesURL = propertiesURL + '/favorites/';
+    favoritesURL =  SERVER_URL + 'favoritos/';
 
 @Injectable()
 export class PropertyService {
@@ -43,11 +43,10 @@ export class PropertyService {
             .toPromise();
     }
 
-    favorite(property,acess_token) {
+    favorite(property) {
         let body = JSON.stringify(property),
             headers = new Headers({'Content-Type': 'application/json'}),
             options = new RequestOptions({headers: headers});
-            options.headers.set('Authorization', "Bearer " + acess_token);
         return this.http.post(favoritesURL, body, options).toPromise();
     }
 

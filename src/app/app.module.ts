@@ -19,6 +19,7 @@ import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 import { LoginServiceProvider } from '../providers/login-service/login-service';
 
+
 @NgModule({
   declarations: [
     MyApp,
@@ -34,7 +35,12 @@ import { LoginServiceProvider } from '../providers/login-service/login-service';
   imports: [
     BrowserModule,
     HttpModule,
-    IonicModule.forRoot(MyApp),
+    IonicModule.forRoot(MyApp,{},{
+      links: [
+    { component: WelcomePage, name: 'Welcome Page', segment: 'home' },
+    { component: LoginPage, name: 'Login Page', segment: 'adm' }
+  ]
+    })
   ],
   bootstrap: [IonicApp],
   entryComponents: [

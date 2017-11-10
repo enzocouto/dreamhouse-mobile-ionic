@@ -2,7 +2,7 @@
 <widget id="org.coenraets.dreamhouse" version="0.0.1" xmlns="http://www.w3.org/ns/widgets" xmlns:cdv="http://cordova.apache.org/ns/1.0">
   <name>DreamHouse</name>
   <description>DreamHouse sample app</description>
-  <author email="ccoenraets@gmail.com" href="http://coenraets.org">Christophe Coenraets</author>
+  <author email="enzocouto@gmail.com" href="">Enzo Couto</author>
   <content src="index.html"/>
   <access origin="*"/>
   <allow-navigation href="http://ionic.local/*"/>

@@ -29,7 +29,7 @@ export class PropertyDetailPage {
     }
 
     favorite(property) {
-        this.propertyService.favorite(property,this.cookieService.get('accessToken'))
+        this.propertyService.favorite(property)
             .then(property => {
                 let toast = this.toastCtrl.create({
                     message: 'O imóvel foi adicionado aos seus Favoritos',
